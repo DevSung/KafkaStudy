@@ -2,12 +2,20 @@ server:
   port: 8001
 
 spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: consumerGroupId
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
   # H2 Database
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/user
     username: root
     password: Whtjdtls1030!
+
 
   # H2 Console
   h2:
@@ -32,8 +40,7 @@ logging:
       hibernate:
         SQL: debug
         type.descriptor.sql: trace
-jwt:
-  secret: DadFufN4Oui8Bfv3ScFj6R9fyJ9hD45E6AGFsXgFsRhT4YSdSb
+
 
 
 

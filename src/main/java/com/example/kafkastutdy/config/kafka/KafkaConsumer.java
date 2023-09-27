@@ -28,7 +28,8 @@ public class KafkaConsumer {
 
         try {
             ObjectMapper mapper = new ObjectMapper();
-            Map<String, Object> map = mapper.readValue(kafkaMessage, new TypeReference<>() {});
+            Map<String, Object> map = mapper.readValue(kafkaMessage, new TypeReference<>() {
+            });
 
             Integer memberId = (Integer) map.get("idx");
             String newGender = (String) map.get("gender");
